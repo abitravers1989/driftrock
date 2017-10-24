@@ -2,7 +2,7 @@
 # and returning the spend of this customer.
 
 require 'userData'
-#could be app.rb / controller class
+# could be app.rb / controller class
 class App
   # attr_accessor :user_email
   #
@@ -11,8 +11,9 @@ class App
   # end
 
   # This should be moved onto app.rb
-  def total_spend(email)
+  def total_spend(_email)
     # user_data = UserData.new(email)
+    # user_data.find_user_id
     '£10.99'
   end
   #
