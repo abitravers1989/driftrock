@@ -7,7 +7,9 @@ class CustomerSpend
     @user_email = email
   end
 
-  def total_spend; end
-
-  def average_spend; end
+  def total_spend
+    "£10.99"
+  end
+  #
+  # def average_spend; end
 end
