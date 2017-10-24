@@ -1,0 +1,44 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/abitravers/gitDir/driftrock_test/spec/userData_spec.rb": [
+        1,
+        1,
+        null,
+        1,
+        null,
+        2,
+        null,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/abitravers/gitDir/driftrock_test/lib/userData.rb": [
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1508862575
+  }
+}
