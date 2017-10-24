@@ -13,7 +13,7 @@ class App
   # This should be moved onto app.rb
   def total_spend(_email)
     # user_data = UserData.new(email)
-    # user_data.find_user_id
+    # user_data.find_user_id_1
     '£10.99'
   end
   #

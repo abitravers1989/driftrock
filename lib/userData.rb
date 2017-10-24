@@ -11,20 +11,20 @@ class UserData
     @user_id = "Not defined"
   end
 
-  def find_user_id
-
-    users_info = @users[:data]
-
-    users_info.each do |user_hashes|
-      if (user_hashes[:email] == @user_email)
-        @user_id = user_hashes[:id]
-       end
+  def find_user_id_1
+    @users[:data].each do |user_hashes|
+      find_user_id_2(user_hashes)
      end
+  end
 
+  def find_user_id_2(user_hashes)
+    if (user_hashes[:email] == @user_email)
+      @user_id = user_hashes[:id]
+    end
   end
 
 end
 
 
 user = UserData.new("schimmel_quincy@ernser.io")
-user.find_user_id
+user.find_user_id_1

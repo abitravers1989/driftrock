@@ -18,9 +18,9 @@ describe UserData do
     end
   end
 
-  context '#find_user_id' do
+  context '#find_user_id_1' do
     it 'Outputs the user ID from a given user email' do
-      user_data.find_user_id
+      user_data.find_user_id_1
       expect(user_data.user_id).to_not eq 'Not defined'
       # while providing API instead of accessing it
       expect(user_data.user_id).to eq 'KZHR-1H35-2IH8-JXYN'
