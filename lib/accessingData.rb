@@ -9,7 +9,7 @@ class AccessingData
     @output= 'No Date'
   end
 
-  #Removing the outer un-necissary hash from the data
+  #THIS DOES NOT WORK!!!!!!Removing the outer un-necissary hash from the data
   def removing_hash_which_encapsulates_data
     formatted_output = @output["data"]
     p formatted_output
@@ -29,7 +29,7 @@ class AccessingData
     removing_hash_which_encapsulates_data
   end
 end
-
-data = AccessingData.new
-data.user_url
-p data.output["data"][0]["id"]
+#
+# data = AccessingData.new
+# data.user_url
+# p data.output["data"][0]["id"]
