@@ -3,27 +3,35 @@
 class AccessingData
   require 'httparty'
 
-  attr_accessor :output_formatted
+  attr_accessor :output
 
   def initialize
-    @output_formatted = 'No Date'
+    @output= 'No Date'
+  end
+
+  #Removing the outer un-necissary hash from the data
+  def removing_hash_which_encapsulates_data
+    formatted_output = @output[:data]
+    p formatted_output
   end
 
   def user_url
     url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=1000'
     response = HTTParty.get(url)
-    output = response.parsed_response
-    # p output[:data]
+    @output = response.parsed_response
+    # p output
+    # removing_hash_which_encapsulates_data
   end
 
   def purchase_url
     url = 'https://driftrock-dev-test-2.herokuapp.com/purchases?page=1&per_page=1000'
     response = HTTParty.get(url)
-    output = response.parsed_response
+    @output = response.parsed_response
+    # p output
     # output is all the data in a hash
-    # puts output
+    # removing_hash_which_encapsulates_data
   end
 end
 
-# data = AccessingData.new
-# data.purchase_url
+data = AccessingData.new
+data.user_url

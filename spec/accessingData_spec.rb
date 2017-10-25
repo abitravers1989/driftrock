@@ -6,19 +6,21 @@ describe AccessingData do
 
   context '#initialize' do
     it 'It is initialized with a string which will be replaced by the formatted data.' do
-      expect(user_data.output_formatted).to eq 'No Date'
+      expect(user_data.output).to eq 'No Date'
     end
   end
 
   context '#user_url' do
     it 'It returns a hash of user data which includes hashes with ID key' do
       expect(user_data.user_url).to be_instance_of Hash
+      expect(user_data.user_url).to include "data"
     end
   end
 
   context '#purchase_url' do
     it 'It returns a hash of purchase data which includes hashes with ID key' do
       expect(user_data.purchase_url).to be_instance_of Hash
+        expect(user_data.purchase_url).to include "data"
     end
   end
 end
