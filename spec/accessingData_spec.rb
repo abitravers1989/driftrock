@@ -13,7 +13,6 @@ describe AccessingData do
   context '#purchase_url' do
     it 'It returns a hash of user data which includes hashes with ID key' do
       expect(user_data.purchase_url).to be_instance_of Hash
+    end
   end
-end
-
 end
