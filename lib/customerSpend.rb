@@ -63,11 +63,10 @@ end
     spend = 0
     count = 0
     @accessing_data.output['data'].each do |purchase_hashes|
-      if @user_id == purchase_hashes['user_id']
-        # add_to_spend(purchase_hashes)
-        spend += purchase_hashes['spend'].to_f
-        count += 1
-      end
+      next unless @user_id == purchase_hashes['user_id']
+      # add_to_spend(purchase_hashes)
+      spend += purchase_hashes['spend'].to_f
+      count += 1
     end
     output(spend, count)
   end

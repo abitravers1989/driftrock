@@ -1,13 +1,11 @@
 require 'customerSpend'
 require 'accessingData'
-
 require 'spec_helper'
 
 # NEED TO COME BACK TO DOUBLING
-# allow...
 
 describe CustomerSpend do
-  let (:data) {AccessingData.new}
+  let (:data) { AccessingData.new }
   let (:customer) { CustomerSpend.new('spinka_christophe@dietrich.io', data) }
 
   context '#initialize' do
