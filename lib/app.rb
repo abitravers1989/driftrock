@@ -3,12 +3,12 @@ require_relative 'customerSpend'
 
 class App
   def total_spend(email)
-    customer = CustomerSpend.new(email)
+    customer = CustomerSpend.new(email, AccessingData.new)
     customer.calculating_total_spend
   end
 
   def average_spend(email)
-    customer = CustomerSpend.new(email)
+    customer = CustomerSpend.new(email, AccessingData.new)
     customer.calcultaing_average_spend
   end
 end
