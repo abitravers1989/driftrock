@@ -39,7 +39,6 @@ end
     getting_purchase_data
     calculating_total_spend_1
     calculating_total_spend_2
-    total_spend_output
   end
 
   def calculating_total_spend_1
@@ -53,38 +52,38 @@ end
   end
 
   def calculating_total_spend_2
-    spend = []
+    spend = 0
     @spend_array.each do |i|
-      spend << i.to_f
+      spend += i.to_f
     end
-    calculating_total_spend_3(spend)
+    total_spend_output(spend)
 end
 
-  def calculating_total_spend_3(spend)
+  def total_spend_output(spend_amount)
+    p @total_spend = "£ #{spend_amount}"
+  end
+
+  def calcultaing_average_spend
+    find_user_id
+    getting_purchase_data
+    spend = 0
     count = 0
-    spend.each do |k|
-      count += k
+    @accessing_data.output['data'].each do |purchase_hashes|
+      if @user_id == purchase_hashes['user_id']
+        spend += purchase_hashes['spend'].to_f
+        count += 1
+      end
     end
-    spend_formatter(count)
-    end
-
-  def spend_formatter(spend_amount)
-    @total_spend = "£ #{spend_amount}"
+    output(spend, count)
   end
 
-  def total_spend_output
-    print @total_spend
-  end
-
- def calcultaing_average_spend
-   find_user_id
-   getting_purchase_data
-   calculating_total_spend_1
-   p @spend_array
-   p @user_id
+  def output(spend, count)
+    p "£#{spend / count}"
  end
 
+
 end
 
-customer = CustomerSpend.new("spinka_christophe@dietrich.io")
-customer.calcultaing_average_spend
+# customer = CustomerSpend.new('spinka_christophe@dietrich.io')
+# customer.calculating_total_spend
+# customer.calcultaing_average_spend

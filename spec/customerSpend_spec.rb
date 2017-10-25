@@ -27,11 +27,14 @@ describe CustomerSpend do
 
   context '#calculating_total_spend' do
     it 'Outputs the total spend of a customer' do
-      puts 'calculating...'
-      p customer.calculating_total_spend
-      puts 'calculated'
-      p customer.total_spend
-      # expect(customer.calculating_total_spend).to output('£ 13.46').to_stdout
+      expect(customer.calculating_total_spend).to include '£ 13.46'
+    end
+  end
+
+  context '#calculating_average_spend' do
+    it 'Outputs the total spend of a customer' do
+      # expect(customer.calcultaing_average_spend).to include '£ 13.46'
+      expect(customer.calcultaing_average_spend).to eq '£ 13.46'
     end
   end
 end
