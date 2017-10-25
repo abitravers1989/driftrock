@@ -3,10 +3,17 @@
 class AccessingData
   require 'httparty'
 
+  attr_accessor :output_formatted
+
+  def initialize
+    @output_formatted = 'No Date'
+  end
+
   def user_url
     url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=1000'
     response = HTTParty.get(url)
     output = response.parsed_response
+    # p output[:data]
   end
 
   def purchase_url
