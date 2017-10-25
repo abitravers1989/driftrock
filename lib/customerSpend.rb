@@ -80,8 +80,6 @@ end
   def output(spend, count)
     p "£#{spend / count}"
  end
-
-
 end
 
 # customer = CustomerSpend.new('spinka_christophe@dietrich.io')

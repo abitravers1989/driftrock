@@ -11,7 +11,6 @@ class App
     customer = CustomerSpend.new(email)
     customer.calcultaing_average_spend
   end
-
 end
 
 # app = App.new
