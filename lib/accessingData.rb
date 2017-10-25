@@ -6,12 +6,12 @@ class AccessingData
   attr_accessor :output
 
   def initialize
-    @output= 'No Date'
+    @output = 'No Date'
   end
 
-  #THIS DOES NOT WORK!!!!!!Removing the outer un-necissary hash from the data
+  # THIS DOES NOT WORK!!!!!!Removing the outer un-necissary hash from the data
   def removing_hash_which_encapsulates_data
-    formatted_output = @output["data"]
+    formatted_output = @output['data']
     p formatted_output
   end
 

@@ -20,7 +20,7 @@ describe AccessingData do
   context '#purchase_url' do
     it 'It returns an array of purchase data which includes hashes with ID key' do
       expect(user_data.purchase_url).to be_instance_of Array
-        # expect(user_data.purchase_url).to include "id"
+      # expect(user_data.purchase_url).to include "id"
     end
   end
 end
