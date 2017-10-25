@@ -128,6 +128,8 @@
         null,
         null,
         null,
+        null,
+        null,
         null
       ],
       "/Users/abitravers/gitDir/driftrock_test/spec/customerSpend_spec.rb": [
@@ -173,6 +175,6 @@
         null
       ]
     },
-    "timestamp": 1508954527
+    "timestamp": 1508960283
   }
 }

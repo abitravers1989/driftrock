@@ -34,7 +34,7 @@ describe CustomerSpend do
   context '#calculating_average_spend' do
     it 'Outputs the total spend of a customer' do
       # expect(customer.calcultaing_average_spend).to include '£ 13.46'
-      expect(customer.calcultaing_average_spend).to eq '£ 13.46'
+      expect(customer.calcultaing_average_spend).to eq '£13.46'
     end
   end
 end
