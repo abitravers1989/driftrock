@@ -25,9 +25,22 @@ describe CustomerSpend do
 
     context '#most_loyal' do
       it 'Finds the ID which occurs the most' do
-        # customer.most_loyal_customer_ID(purchase_data)
-        expect(customer.most_loyal_customer_ID(purchase_data[:data])).to eq 'KZHR-1H35-2IH8-JXYN'
-      end
+        @user_ids = []
+
+        purchase_data.each do |hashes|
+           @user_ids << hashes[:user_id]
+         end
+        #items are now an array of user_ids
+
+         @user_id_hash = Hash.new(0)
+
+         @user_ids.each do |count|
+           @user_id_hash[count] +=1
+         end
+        #now hash of user_id values and their frequencies
+
+         most_frequent_user = @user_id_hash.max_by {|k, v| v}
+         puts most_frequent_user[0]
 
       # it 'Finds the email which is related to this ID' do
       #   expect(customer.most_loyal).to eq 'schimmel_quincy@ernser.io'
@@ -36,3 +49,5 @@ describe CustomerSpend do
   end
 
 end
+
+end 

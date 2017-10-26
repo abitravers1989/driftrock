@@ -3,13 +3,7 @@ require_relative 'accessingData.rb'
 
 class CustomerValue
 
-  # def initialize(purchase_data, user_data)
-  #   @purchase_data = purchase_data
-  #   @user_data = user_data
-  # end
-
   def most_loyal_customer_ID(purchase_data)
-    p purchase_data
     @user_ids = []
 
     purchase_data.each do |hashes|
