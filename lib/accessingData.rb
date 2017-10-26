@@ -6,21 +6,21 @@ class AccessingData
   attr_accessor :output
 
   def initialize
-    @output = 'No Date'
+    @output = 'No Data'
   end
 
   # THIS DOES NOT WORK!!!!!!Removing the outer un-necissary hash from the data
-  def removing_hash_which_encapsulates_data
-    formatted_output = @output['data']
-    p formatted_output
-  end
+  # def removing_hash_which_encapsulates_data
+  #   formatted_output = @output['data']
+  #   p formatted_output
+  # end
 
   def user_url
     url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=1000'
     response = HTTParty.get(url)
     @output = response.parsed_response
-    # removing_hash_which_encapsulates_data
-    # p 'user_url'
+    # break if (response.parsed_response['data'] == nil)
+  # end
   end
 
   def purchase_url

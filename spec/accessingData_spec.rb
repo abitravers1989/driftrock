@@ -6,7 +6,7 @@ describe AccessingData do
 
   context '#initialize' do
     it 'It is initialized with a string which will be replaced by the formatted data.' do
-      expect(user_data.output).to eq 'No Date'
+      expect(user_data.output).to eq 'No Data'
     end
   end
 
