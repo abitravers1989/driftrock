@@ -1,7 +1,7 @@
 #Class will calculate the highest valuing customer. It will output an email to the user.
 require_relative 'accessingData.rb'
 
-class CustomerValue
+class CustomerLoyalty
   attr_accessor :most_frequent_user, :user_email
 
   def initialize
@@ -54,7 +54,7 @@ class CustomerValue
 
 end
 
-customer = CustomerValue.new
+customer = CustomerLoyalty.new
 # purchase_data = (AccessingData.new.purchase_url["data"])
 # user_data = (AccessingData.new.user_url["data"])
 purchase_data =

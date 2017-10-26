@@ -9,14 +9,14 @@ class AccessingData
     @output = 'No Data'
   end
 
-  # THIS DOES NOT WORK!!!!!!Removing the outer un-necissary hash from the data
+
   # def removing_hash_which_encapsulates_data
   #   formatted_output = @output['data']
   #   p formatted_output
   # end
 
   def user_url
-    url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=1000'
+    url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=5000'
     response = HTTParty.get(url)
     @output = response.parsed_response
     # break if (response.parsed_response['data'] == nil)
@@ -24,7 +24,7 @@ class AccessingData
   end
 
   def purchase_url
-    url = 'https://driftrock-dev-test-2.herokuapp.com/purchases?page=1&per_page=1000'
+    url = 'https://driftrock-dev-test-2.herokuapp.com/purchases?page=1&per_page=5000'
     response = HTTParty.get(url)
     @output = response.parsed_response
     # removing_hash_which_encapsulates_data
