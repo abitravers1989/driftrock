@@ -32,5 +32,5 @@ class CustomerValue
 end
 
 customer = CustomerValue.new
-# purchase_data = AccessingData.new
-customer.most_loyal_customer_ID(AccessingData.new.purchase_url["data"])
+purchase_data = (AccessingData.new.purchase_url["data"])
+customer.most_loyal_customer_ID(purchase_data)
