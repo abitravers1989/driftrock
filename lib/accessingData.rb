@@ -20,7 +20,7 @@ class AccessingData
     response = HTTParty.get(url)
     @output = response.parsed_response
     # removing_hash_which_encapsulates_data
-    p 'user_url'
+    # p 'user_url'
   end
 
   def purchase_url
@@ -28,7 +28,7 @@ class AccessingData
     response = HTTParty.get(url)
     @output = response.parsed_response
     # removing_hash_which_encapsulates_data
-    p 'purchase_url'
+    # p 'purchase_url'
   end
 end
 
