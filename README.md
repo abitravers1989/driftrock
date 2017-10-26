@@ -2,7 +2,13 @@
 
 Edge case:
 
-When calculating the most_loyal customer
+When calculating the most_loyal customer... If most loyal customers ID for some reason cannot be found in user data which contains email .. default to the next most common ID.
+
+
+
+#Issue I struggled with
+
+ONE
 
 When calculating the most_loyal customer the user data seems to contain many 'nil' values which indicates empty arrays at the end. This is when using API data. I suspect this issue is to do with
 
@@ -77,6 +83,20 @@ and
 2. I really need to fix the tests so they take the mock API data so I can see if it is actually an issue with my code or the data itself.
 
 
+
+TWO
+
+Testing doubles and getting API data were both relatively new and 'unkowns' to me so tried walk arounds first
+
+
+
+
+IMPROVEMENTS
+
+Spent too long planning and diagraming at the start. Re-draw and re-planned all of these diagrams a number of times.
+
+
+Code is very messy and difficult to follow. Currently way too much going on, hard to see where to follow / the logic flow.
 
 <!--
 When I change it to include the data mocks I still get an error:
