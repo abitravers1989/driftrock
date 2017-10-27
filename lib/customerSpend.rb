@@ -3,9 +3,10 @@ require_relative 'accessingData.rb'
 class CustomerSpend
   attr_accessor :accessing_data, :user_email, :user_id, :spend_array, :total_spend
 
-  def initialize(email, customer_or_purchase_data)
+  def initialize(email, user_data, purchase_data)
     @user_email = email
-    @accessing_data = customer_or_purchase_data
+    @user_data = user_data
+    @purchase_data = purchase_data
     @user_id = 'Not defined'
     @spend_array = []
     @total_spend = 'nil'
@@ -20,8 +21,7 @@ class CustomerSpend
   end
 
   def find_user_id
-    getting_user_data
-    @accessing_data.output['data'].each do |user_hashes|
+    @user_data.each do |user_hashes|
       find_user_id_2(user_hashes)
     end
   end
@@ -32,13 +32,12 @@ class CustomerSpend
 
   def calculating_total_spend
     find_user_id
-    getting_purchase_data
     calculating_total_spend_1
     calculating_total_spend_2
   end
 
   def calculating_total_spend_1
-    @accessing_data.output['data'].each do |purchase_hashes|
+    @purchase_data.each do |purchase_hashes|
       if @user_id == purchase_hashes['user_id']
         @spend_array << purchase_hashes['spend']
       end
@@ -59,10 +58,9 @@ end
 
   def calcultaing_average_spend
     find_user_id
-    getting_purchase_data
     spend = 0
     count = 0
-    @accessing_data.output['data'].each do |purchase_hashes|
+    @purchase_data.each do |purchase_hashes|
       next unless @user_id == purchase_hashes['user_id']
       # add_to_spend(purchase_hashes)
       spend += purchase_hashes['spend'].to_f
@@ -77,10 +75,12 @@ end
   # end
 
   def output(spend, count)
-    p "£#{spend.round(2) / count}"
+    p "£#{(spend / count).round(2)}"
  end
 end
 
-customer = CustomerSpend.new('spinka_christophe@dietrich.io', AccessingData.new)
+user_data = AccessingData.new.user_url
+purchase_data = AccessingData.new.purchase_url
+customer = CustomerSpend.new('spinka_christophe@dietrich.io', user_data, purchase_data)
 customer.calculating_total_spend
 customer.calcultaing_average_spend

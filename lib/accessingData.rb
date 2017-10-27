@@ -6,26 +6,24 @@ class AccessingData
   attr_accessor :output
 
   def initialize
+    @output_1 = []
     @output = []
   end
 
 # both user and purchase data can be same method just passing the word purchases or users through to it as an argument!
 
   def user_url
-    url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=10'
+    url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=19999'
     response = HTTParty.get(url)
-    @output = response.parsed_response
+    @output_1 = response.parsed_response
     formatting_data
-    # break if (response.parsed_response['data'] == nil)
-    # end
   end
 
   def formatting_data
-    empty = []
-     @output['data'].each do | data_hashes |
-       empty.push(data_hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo})
+     @output_1['data'].each do | data_hashes |
+       @output.push(data_hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo})
      end
-       p empty
+      #  p @output
   end
 
   def formatting_2(data_hashes)
@@ -34,15 +32,14 @@ class AccessingData
   end
 
   def purchase_url
-    url = 'https://driftrock-dev-test-2.herokuapp.com/purchases?page=1&per_page=9000'
+    url = 'https://driftrock-dev-test-2.herokuapp.com/purchases?page=1&per_page=10000'
     response = HTTParty.get(url)
-    @output = response.parsed_response
-    # removing_hash_which_encapsulates_data
-    # p 'purchase_url'
+    @output_1 = response.parsed_response
+    formatting_data
   end
 end
 
 
-data = AccessingData.new
-data.user_url
-# p data.output
+# data = AccessingData.new
+# data.user_url
+# puts "output is #{data.output}"

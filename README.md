@@ -31,8 +31,21 @@ This ended up giving me a massive bug in testing because of the API data; for th
 so had to go back and change accessing data class
 
 
+spent a while working out how within this class to convert the key which was a string into a symbol for all the hashes in this huge data set.
+
+once this was complete i then went and changed the other classes
+
+Customer spend class :
+
+- should not have ever called the accessing data class within this / as in made a method to extract the data from it within this. Should have always passed the new insance of the accessing data class through to it as an argument as I have now refactored to.
+
+
 #Improvments
 
+
+accessing data:
+
+both user and purchase data can be same method just passing the word purchases or users through to it as an argument!
 
 
 Edge case:

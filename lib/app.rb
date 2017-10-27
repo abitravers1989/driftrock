@@ -5,12 +5,16 @@ require_relative 'customerLoyalty.rb'
 
 class App
   def total_spend(email)
-    customer = CustomerSpend.new(email, AccessingData.new)
+    user_data = AccessingData.new.user_url
+    purchase_data = AccessingData.new.purchase_url
+    customer = CustomerSpend.new(email, user_data, purchase_data)
     customer.calculating_total_spend
   end
 
   def average_spend(email)
-    customer = CustomerSpend.new(email, AccessingData.new)
+    user_data = AccessingData.new.user_url
+    purchase_data = AccessingData.new.purchase_url
+    customer = CustomerSpend.new(email, user_data, purchase_data)
     customer.calcultaing_average_spend
   end
 
