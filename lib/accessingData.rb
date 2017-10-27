@@ -13,7 +13,7 @@ class AccessingData
   # both user and purchase data can be same method just passing the word purchases or users through to it as an argument!
 
   def user_url
-    url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=9999999'
+    url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=999999'
     response = HTTParty.get(url)
     @output_1 = response.parsed_response
     formatting_data
@@ -38,6 +38,6 @@ class AccessingData
   end
 end
 
-data = AccessingData.new
-data.user_url
-puts "output is #{data.output}"
+# data = AccessingData.new
+# p data.user_url
+# puts "output is #{data.output}"
