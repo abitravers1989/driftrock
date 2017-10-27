@@ -20,8 +20,8 @@ class App
 
   def most_loyal
     customer = CustomerLoyalty.new
-    purchase_data = AccessingData.new.purchase_url['data']
-    user_data = AccessingData.new.user_url['data']
+    purchase_data = AccessingData.new.purchase_url
+    user_data = AccessingData.new.user_url
     customer.most_loyal_customer(purchase_data, user_data)
 end
 end

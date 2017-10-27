@@ -47,10 +47,19 @@ accessing data:
 
 both user and purchase data can be same method just passing the word purchases or users through to it as an argument!
 
+FIX THE ISSUE with the results per page instead of current cheating fix where I just put a very large number into the query url
 
-Edge case:
+Double the data in the test.
 
+Most_loyal
+Edge case.
 When calculating the most_loyal customer... If most loyal customers ID for some reason cannot be found in user data which contains email .. default to the next most common ID.
+
+Customer Spend:
+when the output number ends in 0 eg. £22.20 then the last zero is cut off by the .round method. Therefore I would fix it by changing this method to include the 0
+
+
+
 
 
 

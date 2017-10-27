@@ -14,7 +14,6 @@ class CustomerLoyalty
   end
 
   def most_loyal_customer_ID(purchase_data)
-    p purchase_data
     purchase_data.each do |hashes|
       @user_ids << hashes['user_id']
     end
@@ -54,8 +53,8 @@ class CustomerLoyalty
 end
 
 customer = CustomerLoyalty.new
-purchase_data = AccessingData.new.purchase_url['data']
-user_data = AccessingData.new.user_url['data']
+purchase_data = AccessingData.new.purchase_url
+user_data = AccessingData.new.user_url
 # purchase_data =
 #   [{'user_id' => 'S27G-8UMJ-LDSL-UOPN', "item" => "Synergistic Aluminum Shoes",'spend' => "27.78"},
 #     {'user_id' => "S27G-8UMJ-LDSL-UOPN","item"=>"Gorgeous Paper Hat",'spend' => "54.5"},
