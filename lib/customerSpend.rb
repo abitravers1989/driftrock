@@ -54,7 +54,7 @@ class CustomerSpend
 end
 
   def total_spend_output(spend_amount)
-    p @total_spend = "£ #{spend_amount}"
+    p @total_spend = "£ #{spend_amount.round(2)}"
   end
 
   def calcultaing_average_spend
@@ -77,7 +77,7 @@ end
   # end
 
   def output(spend, count)
-    p "£#{spend / count}"
+    p "£#{spend.round(2) / count}"
  end
 end
 

@@ -18,7 +18,7 @@ describe App do
 
   context '#most_loyal' do
     it 'It outputs the most loyal customers email or Not found"' do
-      expect(app.most_loyal('terry_henry@doyle.io')).to eq '£ 13.46'
+      expect(app.most_loyal).to eq 'runolfsdottir.myra@bogisichtremblay.net'
     end
   end
 end

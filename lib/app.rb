@@ -1,7 +1,7 @@
 # controller class which the user interacts with through irb
 require_relative 'customerSpend.rb'
 require_relative 'accessingData.rb'
-require_relative  'customerLoyalty.rb'
+require_relative 'customerLoyalty.rb'
 
 class App
   def total_spend(email)
@@ -16,11 +16,10 @@ class App
 
   def most_loyal
     customer = CustomerLoyalty.new
-    purchase_data = (AccessingData.new.purchase_url["data"])
-    user_data = (AccessingData.new.user_url["data"])
+    purchase_data = AccessingData.new.purchase_url['data']
+    user_data = AccessingData.new.user_url['data']
     customer.most_loyal_customer(purchase_data, user_data)
 end
-
 end
 
 app = App.new

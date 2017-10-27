@@ -1,4 +1,39 @@
+#The Task At hand
+
+
+
+#How You Can Use It
+
+#Testing
+
+#My jounrney
+
+I started off Planning ...
+
+Set my unkowns then tried to work around them.
+
+This actually ended up wasting some time as accessing the API was simple and if i had just began with researching that I would not have to have done all the work changing the classes and re-designing again.
+
+I redesigned the classes and methods at least twice at the start.. and even know the information they pass through to each other and how they call each other has altered from my diagrames.
+
+I then started off with my classes too seperated out. This seperation gave me anxiety so I put both the customer spends, avergae and total into one class.
+This seemed to make sense at the time as they both use the same find ID and get data methods. But when going on to the other functions I realised I could seperate out even these methods.
+
+I started with a method for calculating the total customer spend. I tried to keep the amount of stuff each method was doing as low as possible as I was going. This actially lead me to using quite simple and long-winded way of finding it out (looping through arrays and hashes to count them.)
+
+Moving onto average spend I improved this a bit and reduced the number of loops by adding counter and spend variables which were just incremented as i looped through the hashes / arrays. This still needs refactoring I was thinking of taking the spend out but stopped before I did this because it would mean making more global variables (or passing spend through to another method.. thought i would move on).
+
+Doubling the data in testing is something I am less comfortable with so had marked as an unknown.. however i thought since getting the API data was simpler than I thought I would also give testing with doubles a go.
+
+
+This ended up giving me a massive bug in testing because of the API data; for the api data the keys in the hash's were strings but in the test mock double they are converted to symbols.. This class is also when i noticed my error in getting the data as the most frequent user ID in the purchase data was not coming up in the user data..
+
+so had to go back and change accessing data class
+
+
 #Improvments
+
+
 
 Edge case:
 
