@@ -27,11 +27,14 @@ class AccessingData
   end
 
   def formatting_2(data_hashes)
+    empty = []
      data_hashes.each do | hashes |
-       hashes = hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-       p hashes
+       hash_with_symbol_key = hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+      #  p hash_with_symbol_key
+       empty.push(hash_with_symbol_key)
       # @output < hashes
     end
+    p empty
   end
 
   def purchase_url
@@ -46,4 +49,4 @@ end
 
 data = AccessingData.new
 data.user_url
-p data.output
+# p data.output
