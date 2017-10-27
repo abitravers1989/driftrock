@@ -6,7 +6,7 @@ class AccessingData
   attr_accessor :output
 
   def initialize
-    @output = 'No Data'
+    @output = []
   end
 
 # both user and purchase data can be same method just passing the word purchases or users through to it as an argument!
@@ -27,14 +27,11 @@ class AccessingData
   end
 
   def formatting_2(data_hashes)
-     data_hashes.each do |k, v |
-      #  p k, v
-       @output = k.to_sym
-
-     end
-    # data_hashes.map {|k, v| k.to_sym, v}
-    #    @output = data_hashes[data_hashes.map{|(k,v)| [k.to_sym, v]}]
-
+     data_hashes.each do | hashes |
+       hashes = hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+       p hashes
+      # @output < hashes
+    end
   end
 
   def purchase_url
