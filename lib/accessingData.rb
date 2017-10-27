@@ -28,12 +28,17 @@ class AccessingData
 
   def formatting_2(data_hashes)
     empty = []
-     data_hashes.each do | hashes |
-       hash_with_symbol_key = hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-      #  p hash_with_symbol_key
-       empty.push(hash_with_symbol_key)
-      # @output < hashes
-    end
+
+    empty.push(data_hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo})
+
+    #
+    # empty = []
+    #  data_hashes.each do | hashes |
+    #    hash_with_symbol_key = hashes.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+    #   #  p hash_with_symbol_key
+    #    empty.push(hash_with_symbol_key)
+    #   # @output < hashes
+    # end
     p empty
   end
 
