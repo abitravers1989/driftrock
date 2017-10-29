@@ -1,3 +1,5 @@
+# Class responsible for two things (so should be refactored). 1 calculating total customer spend
+# when passed customer email. 2. Calculating average customer spend when passed email.
 require_relative 'accessingData.rb'
 
 class CustomerSpend
@@ -62,17 +64,11 @@ end
     count = 0
     @purchase_data.each do |purchase_hashes|
       next unless @user_id == purchase_hashes['user_id']
-      # add_to_spend(purchase_hashes)
       spend += purchase_hashes['spend'].to_f
       count += 1
     end
     output(spend, count)
   end
-
-  # def add_to_spend(purchase_hashes)
-  #     spend = 0
-  #     spend += purchase_hashes['spend'].to_f
-  # end
 
   def output(spend, count)
     p "£#{(spend / count).round(2)}"

@@ -1,11 +1,9 @@
-
-require 'customerLoyalty'
+require 'customerValue'
 require 'spec_helper'
 
-describe CustomerLoyalty do
-  # data.purchase_url double
-
-  let (:customer) { CustomerLoyalty.new }
+describe CustomerValue do
+  let (:customer) { CustomerValue.new(purchase_data, user_data) }
+require_relative './lib/customerSpend.rb'
 
   purchase_data =
     [
@@ -16,11 +14,6 @@ describe CustomerLoyalty do
       },
       {
         'user_id' => 'S27G-8UMJ-LDSL-UOPN',
-        'item' => 'Aerodynamic Copper Bench',
-        'spend' => '34.21'
-      },
-      {
-        'user_id' => 'KZHR-1H35-2IH8-JXYN',
         'item' => 'Gorgeous Paper Hat',
         'spend' => '54.5'
       },
@@ -28,6 +21,11 @@ describe CustomerLoyalty do
         'user_id' => 'KZHR-1H35-2IH8-JXYN',
         'item' => 'Aerodynamic Copper Bench',
         'spend' => '3.21'
+      },
+      {
+        'user_id' => 'KZHR-1H35-2IH8-JXYN',
+        'item' => 'Aerodynamic Copper Bench',
+        'spend' => '35.21'
       }
     ]
 
@@ -49,23 +47,13 @@ describe CustomerLoyalty do
         'email' => 'terry_henry@doyle.io'
       }
     ]
-
-  context '#initialize' do
-    it 'It is initialized with all of the following.' do
-      expect(customer.most_frequent_user).to eq 'Not found'
-      expect(customer.user_email).to eq 'Not found'
-    end
+@cus_email = "nil"
+  email_remeber_highest = 0
+    users = user_data.map{|user| user["email"]}
+    users.each do |k |
+      cus = CustomerSpend.new(k, user_data, purchase_data)
+      if cus.calculating_total_spend > email_remeber_highest
+        cus_email = k
+        email_remeber_highest += cus.calculating_total_spend
+      end
   end
-
-  context '#most_loyal' do
-    it 'Finds the ID which occurs the most' do
-      customer.most_loyal_customer(purchase_data, user_data)
-      expect(customer.most_frequent_user[0]).to eq 'KZHR-1H35-2IH8-JXYN'
-    end
-
-    it 'Finds the email which is related to this ID' do
-      customer.most_loyal_customer(purchase_data, user_data)
-      expect(customer.user_email).to eq 'schimmel_quincy@ernser.io'
-    end
-  end
-end

@@ -15,7 +15,7 @@ describe AccessingData do
       user_data.user_url
       # expect(user_data.user_url).to eq 'user_url'
       expect(user_data.output).to be_instance_of Array
-        expect(user_data.output[0]).to include :id
+      expect(user_data.output[0]).to include :id
     end
   end
 
@@ -24,7 +24,6 @@ describe AccessingData do
       user_data.purchase_url
       # expect(user_data.purchase_url).to eq 'purchase_url'
       expect(user_data.output).to be_instance_of Array
-
     end
   end
 end

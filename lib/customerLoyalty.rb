@@ -1,4 +1,4 @@
-# Class will calculate the highest valuing customer. It will output an email to the user.
+# Class will calculate the most loyal customer. It will output an email to the user.
 require_relative 'accessingData.rb'
 
 class CustomerLoyalty
@@ -9,8 +9,6 @@ class CustomerLoyalty
     @user_id_hash = Hash.new(0)
     @most_frequent_user = 'Not found'
     @user_email = 'Not found'
-    #  @purchase_data = purchase_data
-    #  @user_data = user_data
   end
 
   def most_loyal_customer_ID(purchase_data)

@@ -12,7 +12,7 @@ describe App do
 
   context '#average_spend' do
     it 'It outputs £ symbol followed by a number' do
-      expect(app.average_spend('spinka_christophe@dietrich.io')).to eq "£36.2"
+      expect(app.average_spend('spinka_christophe@dietrich.io')).to eq '£36.2'
     end
   end
 

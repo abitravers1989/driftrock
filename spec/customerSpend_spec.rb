@@ -5,7 +5,6 @@ require 'spec_helper'
 # NEED TO COME BACK TO DOUBLING
 
 describe CustomerSpend do
-
   purchase_data =
     [
       {
