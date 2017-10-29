@@ -26,7 +26,10 @@ class App
 end
 end
 
-app = App.new
-app.total_spend('spinka_christophe@dietrich.io')
-app.average_spend('spinka_christophe@dietrich.io')
-app.most_loyal
+# app = App.new
+# puts "Total spend"
+# app.total_spend('spinka_christophe@dietrich.io')
+# puts "Average"
+# app.average_spend('spinka_christophe@dietrich.io')
+# puts "most loyal"
+# app.most_loyal

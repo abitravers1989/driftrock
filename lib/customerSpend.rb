@@ -79,8 +79,8 @@ end
  end
 end
 
-user_data = AccessingData.new.user_url
-purchase_data = AccessingData.new.purchase_url
-customer = CustomerSpend.new('spinka_christophe@dietrich.io', user_data, purchase_data)
-customer.calculating_total_spend
-customer.calcultaing_average_spend
+# user_data = AccessingData.new.user_url
+# purchase_data = AccessingData.new.purchase_url
+# customer = CustomerSpend.new('spinka_christophe@dietrich.io', user_data, purchase_data)
+# customer.calculating_total_spend
+# customer.calcultaing_average_spend

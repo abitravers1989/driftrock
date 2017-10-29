@@ -48,7 +48,7 @@ class CustomerLoyalty
   end
 
   def output
-    puts @user_email
+    p @user_email
   end
 end
 

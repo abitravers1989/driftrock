@@ -6,6 +6,8 @@
 
 #Testing
 
+TEST COVERAGE 
+
 #My jounrney
 
 I started off Planning ...
@@ -59,6 +61,12 @@ Customer Spend:
 when the output number ends in 0 eg. £22.20 then the last zero is cut off by the .round method. Therefore I would fix it by changing this method to include the 0
 
 
+
+All classes can be tested more and tests can be drastically improved. eg. the customer Loyalty class tests .. the initalize test should be seperated out. EXPECT FOR global variables which aren't going to be used or accessed outside of the class so attr_accessor is not used for them so they cannot be tested
+
+App:
+
+Need to double data to test it properly. At the moment using API data
 
 
 
