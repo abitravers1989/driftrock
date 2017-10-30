@@ -1,4 +1,4 @@
-## Content
+# Content
 
 1.	What Is This Repo. The Task.
 2.	How You Can Install It.
@@ -7,13 +7,12 @@
 5.	Testing.
 6.	User Stories.
 7.	My Approach.
-8.	Improvements.
-9.	My Main Issue/ Struggle.
-10.	Why I Made The Decision to Prioritise What I Did.
+8.	Missing Functionality
+9.	Improvements.
+10.	My Main Issue/ Struggle.
+11.	 Why I prioritised what I did
 
-
-
-# What Is This Repo. The Task.
+## What Is This Repo. The Task.
 
 This repo was created a tech test for Driftrock.
 
@@ -29,18 +28,20 @@ The script (app.rb) is to be opened in the command line and given one argument. 
 
 The answer should be output to Command Line.
 
-#  How You Can Install It.
+#  How You Can Use It.
 
 Navigate to your command line. Type in:
 
 `````
 $ git clone https://github.com/abitravers1989/driftrock.git
+
 `````
 
 Install the gems which the application relies on by typing (in the command line):
 
 ````
-$ bundle install
+$ bundle istall
+
 ````
 
 # How You Can Use It.
@@ -48,37 +49,19 @@ $ bundle install
 In your command line navigate to your ‘driftrock’ directory. Then (still in your command line) type:
 
 `````
-$ cd lib
 $ ruby app.rb
+
 `````
 
-You will notice the following missing functionality:
 
-An argument cannot be given to the app.rb. You cannot supply the method you want the programme to run while in the command line and you cannot provide it with the email of the customer you want to run the total and average spend methods on.
-
-The Highest Value Customer and Most Sold Item methods and functionality do not exist.
-
-I will go into this in more detail in the improvements section.
-
-##  Languages Used / Build
+#  Languages Used / Build
 
 I built this using Ruby. All additional modules have been added to the gemfile.
 
 
-# Testing
+#Testing
 
 Current Test Coverage is:  98.64% -- 145/147 lines in 7 files
-
-To test yourself navigate to the command line and type:
-
-`````
-$ rspec
-`````
-For linting type (yes still in the command line):
-
-`````
-$ rubocop
-`````
 
 ## User Stories
 
@@ -109,4 +92,57 @@ So I can learn from what has gone well and build on it.
 ````
 
 
-#Improvements & Missing Functionality
+# Missing Functionality
+
+App.rb
+
+The current app.rb should be the controller, as it is the file controls the flow of information through the programme.
+
+This controller needs to be tested better with the API data doubled.
+
+The app.rb file should contain code along the following lines.
+
+````
+require ‘controller.rb’
+
+def menu
+   using_app(STDIN.gets.chomp)
+ end
+
+ def using_app(selection)
+   case selection
+     when "total_spend"
+       total_spend(email)
+     when "average_spend"
+       average_spend
+     when "most_loyal"
+       most_loyal
+     else
+       puts "Nothing selected"
+  end
+end
+
+controller = Controller.new
+controller. menu (ARGV)
+
+````
+This is sudo-code and I am not sure it is correct. I am not entirely sure how to pass the argument from the command line in and also how to pass the email given in.
+
+
+## Improvements
+
+I identified accessing an API as an unknown. This meant I worked around it implementing parts of the task I did understand. This ended up wasting time for myself as once I researched it, interacting with the API seemed to be a relatively straight forward task.
+
+I spend a little too long planning upfront. Many of the classes, methods and relationships I planned ended up being re-planned and changed. I would have benefitted more from breaking it down into a very simple workable product, understanding this code then building functionality / refactoring as I went.
+
+## My Main Issue/ Struggle.
+
+The bulk of my time was spent working out how to double the API data.
+
+This is because the API data was an array of hashes where the key in these hashes was a string.
+
+## Why I prioritised what I did
+
+I decided to prioritise testing correctly over completing the task’s functionality. This is because I thought it would be more beneficial to have some code I knew worked as opposed to all the functionality but being unsure about bugs.
+
+In the real world, I would make this prioritisation decision based on the customers’ needs.

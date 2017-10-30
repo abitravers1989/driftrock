@@ -25,26 +25,7 @@ class App
     user_data = AccessingData.new.user_url
     customer.most_loyal_customer(purchase_data, user_data)
   end
-
-#  def menu
-#    using_app(STDIN.gets.chomp)
-#  end
-#
-#  def using_app(selection)
-#    case selection
-#      when "total_spend"
-#        total_spend(email)
-#      when "average_spend"
-#        average_spend
-#      when "most_loyal"
-#        most_loyal
-#      else
-#        puts "Nothing selected"
-#   end
-# end
 end
-
-# menu
 
 app = App.new
 puts "Total spend of spinka_christophe@dietrich.io"
