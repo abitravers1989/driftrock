@@ -40,7 +40,7 @@ $ git clone https://github.com/abitravers1989/driftrock.git
 Install the gems which the application relies on by typing (in the command line):
 
 ````
-$ bundle istall
+$ bundle install
 
 ````
 
@@ -61,7 +61,18 @@ I built this using Ruby. All additional modules have been added to the gemfile.
 
 #Testing
 
-Current Test Coverage is:  98.64% -- 145/147 lines in 7 files
+ Current Test Coverage is:  98.64% -- 145/147 lines in 7 files
+
+ To test yourself navigate to the command line and type:
+
+  `````
+  $ rspec
+  `````
+  For linting type (yes still in the command line):
+
+  `````
+  $ rubocop
+  `````
 
 ## User Stories
 
@@ -91,6 +102,13 @@ I would like to see the name of the item which has been sold the most / appears 
 So I can learn from what has gone well and build on it.
 ````
 
+# My Approach
+
+1.	Mapped out classes, potential methods and relationship between them.
+2.	Mapped out information flow.
+3.	Listed uncertainties.
+4.	Started to code.
+5.	Mapped out the relationships again as I went.
 
 # Missing Functionality
 
@@ -129,7 +147,78 @@ controller. menu (ARGV)
 This is sudo-code and I am not sure it is correct. I am not entirely sure how to pass the argument from the command line in and also how to pass the email given in.
 
 
+Highest Value customer functionality missing.
+
+I have started this in a customerValue class but needs refining:
+
+`````
+require_relative 'accessingData.rb'
+
+class CustomerValue(purchase_data, user_data)
+
+def initialize
+   @purchase_data = purchase_data
+   @user_data = user_data
+   @customer_email = "nil"
+end
+
+def highest_value(purchase_data)
+    email_remeber_highest = 0
+      users = user_data.map{|user| user["email"]}
+      users.each do |k |
+        p k
+        cus = CustomerSpend.new(k, user_data, purchase_data)
+        p k
+        if cus.calculating_total_spend.to_f > email_remeber_highest
+           p k
+          @cus_email = k
+          email_remeber_highest += cus.calculating_total_spend.to_f
+        end
+    end
+
+end
+
+end
+
+`````
+
+Most Sold functionality. Not started thinking about this yet.
+
+
 ## Improvements
+
+
+
+Accessing Data Class
+
+Both the user and purchase data access method are doing the same thing. They could become one method with the API data set passed into them as an argument.
+
+At the moment I have cheated with the results per page by adding a large number. I would loop through the array data given until an empty hash was occurred. This would mean not having to supply the actual page number.
+
+I would double the API data in the test.
+
+Most Loyal Class
+
+Edge case of if the most loyal customers ID number did not appear in the user data needs addressing.
+
+Refactoring so the methods are much shorter.
+
+
+Customer Spend Class
+
+Should be refactored into two separate classes. Total spend and average spend.
+The methods which calculate the average spend need to be made less complex (separated out so they are shorter).
+
+When the number output by either of the methods ends in 0 eg. £22.20 then the last zero is cut off by the .round method. I need to improve this.
+
+
+All classes
+
+Unsure if so much should be in the initialise method.
+
+
+
+Process improvements:
 
 I identified accessing an API as an unknown. This meant I worked around it implementing parts of the task I did understand. This ended up wasting time for myself as once I researched it, interacting with the API seemed to be a relatively straight forward task.
 
@@ -139,7 +228,7 @@ I spend a little too long planning upfront. Many of the classes, methods and rel
 
 The bulk of my time was spent working out how to double the API data.
 
-This is because the API data was an array of hashes where the key in these hashes was a string.
+This is because the API data was an array of hashes where the key in these hashes was a string. In the test when I doubled this data the keys were automatically converted to symbols. I spend a while making the tests work and changed the API data in the accessing data class.
 
 ## Why I prioritised what I did
 
