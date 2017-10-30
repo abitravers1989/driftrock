@@ -1,4 +1,4 @@
-# Content
+## Content
 
 1.	What Is This Repo. The Task.
 2.	How You Can Install It.
@@ -13,7 +13,7 @@
 
 
 
-## What Is This Repo. The Task.
+# What Is This Repo. The Task.
 
 This repo was created a tech test for Driftrock.
 
@@ -29,7 +29,7 @@ The script (app.rb) is to be opened in the command line and given one argument. 
 
 The answer should be output to Command Line.
 
-#  How You Can Use It.
+#  How You Can Install It.
 
 Navigate to your command line. Type in:
 
@@ -60,12 +60,12 @@ The Highest Value Customer and Most Sold Item methods and functionality do not e
 
 I will go into this in more detail in the improvements section.
 
-#  Languages Used / Build
+##  Languages Used / Build
 
 I built this using Ruby. All additional modules have been added to the gemfile.
 
 
-#Testing
+# Testing
 
 Current Test Coverage is:  98.64% -- 145/147 lines in 7 files
 
