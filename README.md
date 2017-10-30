@@ -35,14 +35,12 @@ Navigate to your command line. Type in:
 
 `````
 $ git clone https://github.com/abitravers1989/driftrock.git
-
 `````
 
 Install the gems which the application relies on by typing (in the command line):
 
 ````
 $ bundle install
-
 ````
 
 # How You Can Use It.
@@ -52,8 +50,7 @@ In your command line navigate to your ‘driftrock’ directory. Then (still in 
 `````
 $ cd lib
 $ ruby app.rb
-
-````
+`````
 
 You will notice the following missing functionality:
 
@@ -76,13 +73,11 @@ To test yourself navigate to the command line and type:
 
 `````
 $ rspec
-
 `````
 For linting type (yes still in the command line):
 
 `````
 $ rubocop
-
 `````
 
 
