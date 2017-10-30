@@ -80,5 +80,33 @@ For linting type (yes still in the command line):
 $ rubocop
 `````
 
+## User Stories
+
+````
+As a Marketer: so I can understand who to focus my re-marketing campaigns on,
+I would like to see the total spend of a customer when I provide their email address.
+So I can decide how much resource I should expend on retaining them.
+
+As a Marketer: so I can understand who to focus my re-marketing campaigns on,
+I would like to see the average spend of a customer when I provide their email address.
+So I can decide how much resource I should expend on retaining them.
+````
+
+````
+As a Marketer: so I can understand who to focus my customer-champion and loyalty campaigns on,
+I would like to see the email details of the customer who purchases the most frequently from us.
+So I can decide how and what loyalty benefits to offer them.
+
+As a Marketer: so I can understand who to focus my customer-champion and loyalty campaigns on,
+I would like to see the email details of the customer who has spent the most with us.
+So I can focus specific campaigns on them.
+````
+
+````
+As a Marketer: so I can decide which of our item our customers want or where we have been successful in past campaigns,
+I would like to see the name of the item which has been sold the most / appears most frequently.
+So I can learn from what has gone well and build on it.
+````
+
 
 #Improvements & Missing Functionality
