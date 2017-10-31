@@ -34,14 +34,12 @@ Navigate to your command line. Type in:
 
 `````
 $ git clone https://github.com/abitravers1989/driftrock.git
-
 `````
 
 Install the gems which the application relies on by typing (in the command line):
 
 ````
 $ bundle install
-
 ````
 
 # How You Can Use It.
@@ -50,7 +48,6 @@ In your command line navigate to your ‘driftrock’ directory. Then (still in 
 
 `````
 $ ruby app.rb
-
 `````
 
 
@@ -117,7 +114,7 @@ The app.rb file should contain code along the following lines.
 ````
 require ‘controller.rb’
 
-def menu
+ def menu
    using_app(STDIN.gets.chomp)
  end
 
@@ -132,7 +129,7 @@ def menu
      else
        puts "Nothing selected"
   end
-end
+ end
 
 controller = Controller.new
 controller. menu (ARGV)
@@ -158,7 +155,7 @@ end
 
 def highest_value(purchase_data)
     email_remeber_highest = 0
-      users = user_data.map{|user| user["email"]}
+    users = user_data.map{|user| user["email"]}
       users.each do |k |
         p k
         cus = CustomerSpend.new(k, user_data, purchase_data)
@@ -168,10 +165,8 @@ def highest_value(purchase_data)
           @cus_email = k
           email_remeber_highest += cus.calculating_total_spend.to_f
         end
-    end
-
-end
-
+      end
+  end
 end
 
 `````
@@ -222,7 +217,7 @@ I spend a little too long planning upfront. Many of the classes, methods and rel
 
 The bulk of my time was spent working out how to double the API data.
 
-This is because the API data was an array of hashes where the key in these hashes was a string. In the test when I doubled this data the keys were automatically converted to symbols. I spend a while making the tests work and changed the API data in the accessing data class. 
+This is because the API data was an array of hashes where the key in these hashes was a string. In the test when I doubled this data the keys were automatically converted to symbols. I spend a while making the tests work and changed the API data in the accessing data class.
 
 ## Why I prioritised what I did
 
