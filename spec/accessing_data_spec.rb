@@ -1,4 +1,4 @@
-require 'accessingData'
+require 'accessing_data'
 require 'spec_helper'
 
 describe AccessingData do
@@ -13,7 +13,6 @@ describe AccessingData do
   context '#user_url' do
     it 'It returns an array of user data which includes hashes with ID key' do
       user_data.user_url
-      # expect(user_data.user_url).to eq 'user_url'
       expect(user_data.output).to be_instance_of Array
       expect(user_data.output[0]).to include :id
     end
@@ -22,8 +21,8 @@ describe AccessingData do
   context '#purchase_url' do
     it 'It returns an array of purchase data which includes hashes with ID key' do
       user_data.purchase_url
-      # expect(user_data.purchase_url).to eq 'purchase_url'
       expect(user_data.output).to be_instance_of Array
+      expect(user_data.output[0]).to include :spend
     end
   end
 end

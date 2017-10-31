@@ -1,7 +1,7 @@
 # controller class which the user interacts with through irb
-require_relative 'customerSpend.rb'
-require_relative 'accessingData.rb'
-require_relative 'customerLoyalty.rb'
+require_relative 'customer_spend.rb'
+require_relative 'accessing_data.rb'
+require_relative 'customer_loyalty.rb'
 
 class App
 

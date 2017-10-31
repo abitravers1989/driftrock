@@ -1,6 +1,7 @@
-# Class responsible for two things (so should be refactored). 1 calculating total customer spend
-# when passed customer email. 2. Calculating average customer spend when passed email.
-require_relative 'accessingData.rb'
+# Class responsible for two things (so should be refactored).
+# 1 calculating total customer spend from their email.
+# 2. calculating average customer spend from their email.
+require_relative 'accessing_data.rb'
 
 class CustomerSpend
   attr_accessor :accessing_data, :user_email, :user_id, :spend_array, :total_spend
@@ -74,9 +75,3 @@ end
     p "£#{(spend / count).round(2)}"
  end
 end
-
-# user_data = AccessingData.new.user_url
-# purchase_data = AccessingData.new.purchase_url
-# customer = CustomerSpend.new('spinka_christophe@dietrich.io', user_data, purchase_data)
-# customer.calculating_total_spend
-# customer.calcultaing_average_spend

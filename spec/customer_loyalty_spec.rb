@@ -1,10 +1,8 @@
-
-require 'customerLoyalty'
+require 'customer_loyalty'
 require 'spec_helper'
 
 describe CustomerLoyalty do
   # data.purchase_url double
-
   let (:customer) { CustomerLoyalty.new }
 
   purchase_data =
