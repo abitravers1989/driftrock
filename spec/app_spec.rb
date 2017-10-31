@@ -2,7 +2,7 @@ require 'app'
 require 'spec_helper'
 
 describe App do
-  let (:app) { App.new }
+  let(:app) { App.new }
 
   context '#total_spend' do
     it 'It outputs £ symbol followed by a number' do

@@ -3,7 +3,7 @@ require 'spec_helper'
 
 describe CustomerLoyalty do
   # data.purchase_url double
-  let (:customer) { CustomerLoyalty.new }
+  let(:customer) { CustomerLoyalty.new }
 
   purchase_data =
     [

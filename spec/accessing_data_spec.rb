@@ -2,7 +2,7 @@ require 'accessing_data'
 require 'spec_helper'
 
 describe AccessingData do
-  let (:user_data) { AccessingData.new }
+  let(:user_data) { AccessingData.new }
 
   context '#initialize' do
     it 'It is initialized with a string which will be replaced by the formatted data.' do

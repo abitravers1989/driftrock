@@ -10,8 +10,6 @@ class AccessingData
     @output = []
   end
 
-  # both user and purchase data can be same method just passing the word purchases or users through to it as an argument!
-
   def user_url
     url = 'https://driftrock-dev-test-2.herokuapp.com/users?page=1&per_page=999999'
     response = HTTParty.get(url)
@@ -23,7 +21,6 @@ class AccessingData
     @output_1['data'].each do |data_hashes|
       @output.push(data_hashes.each_with_object({}) { |(k, v), memo| memo[k.to_sym] = v; })
     end
-    #  p @output
   end
 
   def formatting_2(data_hashes)
@@ -37,7 +34,3 @@ class AccessingData
     formatting_data
   end
 end
-
-# data = AccessingData.new
-# p data.user_url
-# puts "output is #{data.output}"

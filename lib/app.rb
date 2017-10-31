@@ -1,4 +1,4 @@
-# controller class which the user interacts with through irb
+# Controller class which controls the flow of information and brings together functions.
 require_relative 'customer_spend.rb'
 require_relative 'accessing_data.rb'
 require_relative 'customer_loyalty.rb'

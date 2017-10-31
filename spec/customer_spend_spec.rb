@@ -39,7 +39,7 @@ describe CustomerSpend do
         'email' => 'terry_henry@doyle.io'
       }
     ]
-  let (:customer) { CustomerSpend.new('schimmel_quincy@ernser.io', user_data, purchase_data) }
+  let(:customer) { CustomerSpend.new('schimmel_quincy@ernser.io', user_data, purchase_data) }
 
   context '#initialize' do
     it 'Is initialized with an undefined user id' do

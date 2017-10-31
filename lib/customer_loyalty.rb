@@ -11,26 +11,26 @@ class CustomerLoyalty
     @user_email = 'Not found'
   end
 
-  def most_loyal_customer_ID(purchase_data)
+  def most_loyal_customer_id(purchase_data)
     purchase_data.each do |hashes|
       @user_ids << hashes['user_id']
     end
-    most_loyal_customer_ID_2
+    most_loyal_customer_id_2
   end
 
-  def most_loyal_customer_ID_2
+  def most_loyal_customer_id_2
     @user_ids.each do |count|
       @user_id_hash[count] += 1
     end
-    most_loyal_customer_ID_3
+    most_loyal_customer_id_3
   end
 
-  def most_loyal_customer_ID_3
+  def most_loyal_customer_id_3
     @most_frequent_user = @user_id_hash.max_by { |_k, v| v }
- end
+  end
 
   def most_loyal_customer(purchase_data, user_data)
-    most_loyal_customer_ID(purchase_data)
+    most_loyal_customer_id(purchase_data)
     user_data.each do |user_hashes|
       if user_hashes['id'] == @most_frequent_user[0]
         @user_email = user_hashes['email']

@@ -31,7 +31,7 @@ class CustomerSpend
 
   def find_user_id_2(user_hashes)
     @user_id = user_hashes['id'] if user_hashes['email'] == @user_email
-    end
+  end
 
   def calculating_total_spend
     find_user_id
@@ -53,7 +53,7 @@ class CustomerSpend
       spend += i.to_f
     end
     total_spend_output(spend)
-end
+  end
 
   def total_spend_output(spend_amount)
     p @total_spend = "£ #{spend_amount.round(2)}"
@@ -73,5 +73,5 @@ end
 
   def output(spend, count)
     p "£#{(spend / count).round(2)}"
- end
+  end
 end
