@@ -84,13 +84,19 @@ I can then decide how much resource I should expend on retaining them.
 ````
 
 ````
-As a Marketer: So I can understand who to focus my customer-champion and loyalty campaigns on, I would like to see the email details of the customers who purchase the most frequently from us. I can then decide how and what loyalty benefits to offer them.
+As a Marketer: So I can understand who to focus my customer-champion and loyalty campaigns on,
+I would like to see the email details of the customers who purchase the most frequently from us.
+I can then decide how and what loyalty benefits to offer them.
 
-As a Marketer: So I can understand who to focus my customer-champion and loyalty campaigns on, I would like to see the email details of the customers who has spent the most with us. I can then focus specific campaigns on them.
+As a Marketer: So I can understand who to focus my customer-champion and loyalty campaigns on,
+I would like to see the email details of the customers who has spent the most with us.
+I can then focus specific campaigns on them.
 ````
 
 ````
-As a Marketer: So I can decide which of our items our customers want and/or which campaigns have been successful I would like to see the name of the item which has been sold the most / appears most frequently. I can learn from what has gone well and build on it.
+As a Marketer: So I can decide which of our items our customers want and/or which campaigns have been successful,
+I would like to see the name of the item which has been sold the most / appears most frequently. 
+I can learn from what has gone well and build on it.
 ````
 
 ## My Approach
