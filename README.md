@@ -95,7 +95,7 @@ I can then focus specific campaigns on them.
 
 ````
 As a Marketer: So I can decide which of our items our customers want and/or which campaigns have been successful,
-I would like to see the name of the item which has been sold the most / appears most frequently. 
+I would like to see the name of the item which has been sold the most / appears most frequently.
 I can learn from what has gone well and build on it.
 ````
 
@@ -201,10 +201,11 @@ Refactoring so the methods are much shorter.
 
 Customer Spend Class
 
-Should be refactored into two separate classes, total spend and average spend.
+Should be refactored into two separate classes. Either; total spend and average spend or a class for finding the ID and a class for calculating that customers spend(both total and average).
 The methods which calculate the average spend need to be made less complex (separated out so they are shorter).
 
 When the number output by either of the methods ends in 0 e.g. £22.20 then the last zero is cut off by the .round method. I need to improve this.
+
 
 
 All classes:
