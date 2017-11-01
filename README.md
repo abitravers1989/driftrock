@@ -1,3 +1,6 @@
+Next steps:
+"Current issue with slowness of finding the highest value customer. Loop take a long time. (Would this be quicker in Javascript?). App.rb which will be controller class, need to refactor to get the data once then pass it to all the methods. This API data can then be doubled in testing better and app may execute slightly faster."
+
 # Content
 
 1.	What Is This Repo. The Task.
@@ -143,7 +146,7 @@ controller. menu (ARGV)
 ````
 This is sudo-code and I am not sure it is correct. I am not entirely sure how to pass the argument from the command line in and also how to pass the email given in.
 
-Most Sold functionality. 
+Most Sold functionality.
 
 
 ## Improvements
