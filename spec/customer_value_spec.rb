@@ -48,15 +48,15 @@ describe CustomerValue do
   let(:customer) { CustomerValue.new(purchase_data, user_data) }
 
     context '#initialize' do
-      it 'It is initialized with customer email set as nil.' do
-        expect(customer.customer_id).to eq 0
+      it 'When initialized the highest spend global variable is zero' do
+        expect(customer.highest_spend).to eq 0
       end
     end
 
     context '#highest_value' do
-      it 'Finds the ID of the customer who has spent the most' do
+      it 'Calculates the highest spend of any customers' do
         customer.highest_value
-        expect(customer.customer_id).to eq 'KZHR-1H35-2IH8-JXYN'
+        expect(customer.highest_spend).to eq 106.2
       end
     end
 
