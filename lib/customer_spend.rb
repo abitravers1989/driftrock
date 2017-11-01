@@ -4,7 +4,6 @@
 require_relative 'accessing_data.rb'
 
 class CustomerSpend
-  attr_accessor :accessing_data, :user_email, :user_id, :spend_array, :total_spend
 
   def initialize(email, user_data, purchase_data)
     @user_email = email
@@ -12,8 +11,10 @@ class CustomerSpend
     @purchase_data = purchase_data
     @user_id = 'Not defined'
     @spend_array = []
-    @total_spend = 'nil'
+    @total_spend = 0
   end
+
+  attr_accessor :user_email, :user_id,
 
   def getting_user_data
     @accessing_data.user_url
@@ -56,7 +57,7 @@ class CustomerSpend
   end
 
   def total_spend_output(spend_amount)
-    p @total_spend = "£ #{spend_amount.round(2)}"
+    p "£ #{spend_amount.round(2)}"
   end
 
   def calcultaing_average_spend

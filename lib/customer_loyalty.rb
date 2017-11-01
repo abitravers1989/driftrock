@@ -1,5 +1,4 @@
 # Class calculates the most loyal customer. Outputs this customer's email.
-require_relative 'accessing_data.rb'
 
 class CustomerLoyalty
   attr_accessor :most_frequent_user, :user_email

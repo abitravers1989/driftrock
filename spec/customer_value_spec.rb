@@ -2,8 +2,6 @@ require 'customer_value'
 require 'spec_helper'
 
 describe CustomerValue do
-  let (:customer) { CustomerValue.new(purchase_data, user_data) }
-# require_relative './lib/customer_spend.rb'
   purchase_data =
     [
       {
@@ -47,15 +45,17 @@ describe CustomerValue do
       }
     ]
 
+  let(:customer) { CustomerValue.new(purchase_data, user_data) }
+
     context '#initialize' do
       it 'It is initialized with customer email set as nil.' do
-        expect(customer.customer_id).to eq "Nill"
+        expect(customer.customer_id).to eq 0
       end
     end
 
     context '#highest_value' do
       it 'Finds the ID of the customer who has spent the most' do
-        customer.highest_value(purchase_data)
+        customer.highest_value
         expect(customer.customer_id).to eq 'KZHR-1H35-2IH8-JXYN'
       end
     end
