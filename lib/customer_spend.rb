@@ -14,7 +14,7 @@ class CustomerSpend
     @total_spend = 0
   end
 
-  attr_accessor :user_email, :user_id,
+  attr_accessor :user_email, :user_id, :total_spend
 
   def getting_user_data
     @accessing_data.user_url
@@ -57,9 +57,14 @@ class CustomerSpend
   end
 
   def total_spend_output(spend_amount)
-    p "£ #{spend_amount.round(2)}"
+    customers_spend = spend_amount.round(2)
+    @total_spend = customers_spend.to_f
   end
 
+  def output_total_spend
+    p "£ #{@total_spend}"
+  end
+  
   def calcultaing_average_spend
     find_user_id
     spend = 0
@@ -76,3 +81,54 @@ class CustomerSpend
     p "£#{(spend / count).round(2)}"
   end
 end
+
+purchase_data =
+  [
+    {
+      'user_id' => 'KZHR-1H35-2IH8-JXYN',
+      'item' => 'Synergistic Aluminum Shoes',
+      'spend' => '27.78'
+    },
+    {
+      'user_id' => 'S27G-8UMJ-LDSL-UOPN',
+      'item' => 'Aerodynamic Copper Bench',
+      'spend' => '34.21'
+    },
+    {
+      'user_id' => 'KZHR-1H35-2IH8-JXYN',
+      'item' => 'Gorgeous Paper Hat',
+      'spend' => '54.5'
+    },
+    {
+      'user_id' => 'KZHR-1H35-2IH8-JXYN',
+      'item' => 'Aerodynamic Copper Bench',
+      'spend' => '3.21'
+    }
+  ]
+
+# data.user_url double
+user_data =
+  [
+    {
+      'id' => 'KZHR-1H35-2IH8-JXYN',
+      'first_name' => 'Quincy',
+      'last_name' => 'Schimmel',
+      'phone' => '186.301.6921 x948',
+      'email' => 'schimmel_quincy@ernser.io'
+    },
+    {
+      'id' => 'S27G-8UMJ-LDSL-UOPN',
+      'first_name' => 'Henry',
+      'last_name' => 'Terry',
+      'phone' => '636-387-6074 x690',
+      'email' => 'terry_henry@doyle.io'
+    }
+  ]
+
+# customer = CustomerSpend.new('schimmel_quincy@ernser.io', user_data, purchase_data)
+# puts "customer spend #{customer}"
+# puts "output here?"
+# s = customer.calculating_total_spend
+# p s
+# puts "or here?"
+#   puts "customer spend #{s}"

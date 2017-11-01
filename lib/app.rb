@@ -10,6 +10,7 @@ class App
     purchase_data = AccessingData.new.purchase_url
     customer = CustomerSpend.new(email, user_data, purchase_data)
     customer.calculating_total_spend
+    customer.output_total_spend
   end
 
   def average_spend(email)

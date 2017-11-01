@@ -16,18 +16,19 @@ class CustomerValue
   def highest_value
     @user_data.each do |k|
       var = k["email"]
-      # puts "first hs #{@highest_spend}"
-      customer = CustomerSpend.new(var, @user_data, @purchase_data)
-      puts "customer spend #{customer}"
-      @customer_spend = customer.calculating_total_spend.to_f
-      # puts "second hs #{@highest_spend}"
-      puts "customer spend #{@customer_spend}"
-      if (@customer_spend > @highest_spend)
+      calculate_customer_spend(var)
+      if (@customer_spend.to_f > @highest_spend)
         @highest_spend += @customer_spend
-      # puts "Third hS #{@highest_spend}"
        end
     end
     puts "Last hS #{@highest_spend}"
+  end
+
+  def calculate_customer_spend(var)
+    customer = CustomerSpend.new(var, @user_data, @purchase_data)
+    puts "customer spend #{customer}"
+    @customer_spend = customer.calculating_total_spend
+      puts "2nd customer spend #{@customer_spend}"
   end
 
 end
