@@ -199,10 +199,10 @@ Edge case  the most loyal customers ID number did not appear in the user data, t
 Refactoring so the methods are much shorter.
 
 
-Customer Spend Class
+Customer Spend Class:
 
 Should be refactored into two separate classes. Either; total spend and average spend or a class for finding the ID and a class for calculating that customers spend(both total and average).
-The methods which calculate the average spend need to be made less complex (separated out so they are shorter). I would first take out the part of the method which is responsible for incrementing (/counting) the total spend. Then I would take out the part which is responsible for counting the number of times the customer has bought something. 
+The methods which calculate the average spend need to be made less complex (separated out so they are shorter). I would first take out the part of the method which is responsible for incrementing (/counting) the total spend. Then I would take out the part which is responsible for counting the number of times the customer has bought something.
 
 When the number output by either of the methods ends in 0 e.g. £22.20 then the last zero is cut off by the .round method. I need to improve this.
 
