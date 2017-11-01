@@ -143,41 +143,7 @@ controller. menu (ARGV)
 ````
 This is sudo-code and I am not sure it is correct. I am not entirely sure how to pass the argument from the command line in and also how to pass the email given in.
 
-
-Highest Value customer functionality missing.
-
-I have started this in a customerValue class but it needs refining:
-
-`````
-require_relative 'accessingData.rb'
-
-class CustomerValue(purchase_data, user_data)
-
-def initialize
-   @purchase_data = purchase_data
-   @user_data = user_data
-   @customer_email = "nil"
-end
-
-def highest_value(purchase_data)
-    email_remeber_highest = 0
-    users = user_data.map{|user| user["email"]}
-      users.each do |k |
-        p k
-        cus = CustomerSpend.new(k, user_data, purchase_data)
-        p k
-        if cus.calculating_total_spend.to_f > email_remeber_highest
-           p k
-          @cus_email = k
-          email_remeber_highest += cus.calculating_total_spend.to_f
-        end
-      end
-  end
-end
-
-`````
-
-Most Sold functionality. I have not begun this yet.
+Most Sold functionality. 
 
 
 ## Improvements

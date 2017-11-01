@@ -21,4 +21,10 @@ describe App do
       expect(app.most_loyal).to eq 'bogisich_judah@hilperttromp.biz'
     end
   end
+
+  context '#highest_value_customer' do
+    it 'It outputs the highest value customer who has spent the most' do
+      expect(app.highest_value_customer).to eq 'bogisich_judah@hilperttromp.biz'
+    end
+  end
 end
