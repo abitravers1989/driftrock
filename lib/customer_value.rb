@@ -4,13 +4,14 @@ require_relative './accessing_data.rb'
 
 class CustomerValue
 
-  attr_accessor :highest_spend
+  attr_accessor :highest_spend, :highest_value_cus_email
 
   def initialize(purchase_data, user_data)
-     @purchase_data = purchase_data
-     @user_data = user_data
-     @highest_spend = 0
-     @customer_spend = 0
+    @purchase_data = purchase_data
+    @user_data = user_data
+    @highest_spend = 0
+    @customer_spend = 0
+    @highest_value_cus_email = "nill"
   end
 
   def highest_value
@@ -19,15 +20,18 @@ class CustomerValue
       calculate_customer_spend(user_emails)
       if (@customer_spend.to_f > @highest_spend)
         @highest_spend += @customer_spend
-       end
+        @highest_value_cus_email = user_emails
+      end
     end
   end
 
   def calculate_customer_spend(user_emails)
     customer = CustomerSpend.new(user_emails, @user_data, @purchase_data)
-    # puts "customer spend #{customer}"
     @customer_spend = customer.calculating_total_spend
-      # puts "2nd customer spend #{@customer_spend}"
+  end
+
+  def customer_email_output
+    p @highest_value_cus_email
   end
 
 end
@@ -77,4 +81,4 @@ user_data =
 
 customer = CustomerValue.new(purchase_data, user_data)
 customer.highest_value
-p customer.highest_spend
+customer.customer_email_output
