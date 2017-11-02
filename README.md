@@ -1,9 +1,7 @@
-Next steps:
-Current issue with slowness of finding the highest value customer. Loop take a long time. (Would this be quicker in Javascript?).
 
+Command line app which interacts with a public API and allows a user to query the data.
 
-
-# Content
+# Content of ReadMe
 
 1.	What Is This Repo. The Task.
 2.	How You Can Install It.
@@ -181,6 +179,9 @@ Average spend functionality: If the customer provided has made no purchases then
 
 Total spend: If customer has made no purchases need error message.
 
+Most Loyal customer class:
+
+Current issue with slowness of finding the highest value customer. Loop take a long time. (Would this be quicker in Javascript?).
 
 
 All classes:
