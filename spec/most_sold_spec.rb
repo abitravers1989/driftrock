@@ -58,11 +58,19 @@ describe MostSold do
     end
   end
 
-  context '#item_spend' do
+  context '#total_item_revenue' do
     it 'It calculates the total spend of a given item.' do
       most_sold.total_item_revenue
       expect(most_sold.highest_total).to eq 176.2
     end
   end
+
+  context '#set_item_name' do
+    it 'It sets the name of the most sold item to that which has the highest revenue.' do
+      most_sold.total_item_revenue
+      expect(most_sold.most_sold_item).to eq "Gorgeous Paper Hat"
+    end
+  end
+
 
 end

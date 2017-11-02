@@ -146,9 +146,6 @@ controller. menu (ARGV)
 ````
 This is sudo-code and I am not sure it is correct. I am not entirely sure how to pass the argument from the command line in and also how to pass the email given in.
 
-Most Sold functionality.
-
-
 ## Improvements
 
 
