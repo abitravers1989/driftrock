@@ -3,6 +3,8 @@ require_relative 'customer_spend.rb'
 require_relative 'accessing_data.rb'
 require_relative 'customer_loyalty.rb'
 require_relative 'customer_value.rb'
+require_relative 'most_sold.rb'
+
 
 class App
 
@@ -32,6 +34,12 @@ class App
     customer.highest_value
     customer.customer_email_output
   end
+
+  def most_sold_item
+    sold = MostSold.new(@purchase_data, @user_data)
+    sold.total_item_revenue
+    sold.output_most_sold_item
+  end
 end
 
 user_data = AccessingData.new.user_url
@@ -45,3 +53,5 @@ puts "Most loyal customer"
 app.most_loyal
 puts "Highest value customer"
 app.highest_value_customer
+puts "Most sold item"
+app.most_sold_item
