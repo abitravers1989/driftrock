@@ -6,38 +6,37 @@ require_relative 'customer_value.rb'
 
 class App
 
+  def initialize(user_data, purchase_data)
+    @user_data = user_data
+    @purchase_data = purchase_data
+  end
+
   def total_spend(email)
-    user_data = AccessingData.new.user_url
-    purchase_data = AccessingData.new.purchase_url
-    customer = CustomerSpend.new(email, user_data, purchase_data)
+    customer = CustomerSpend.new(email, @user_data, @purchase_data)
     customer.calculating_total_spend
     customer.output_total_spend
   end
 
   def average_spend(email)
-    user_data = AccessingData.new.user_url
-    purchase_data = AccessingData.new.purchase_url
-    customer = CustomerSpend.new(email, user_data, purchase_data)
+    customer = CustomerSpend.new(email, @user_data, @purchase_data)
     customer.calcultaing_average_spend
   end
 
   def most_loyal
     customer = CustomerLoyalty.new
-    purchase_data = AccessingData.new.purchase_url
-    user_data = AccessingData.new.user_url
-    customer.most_loyal_customer(purchase_data, user_data)
+    customer.most_loyal_customer(@purchase_data, @user_data)
   end
 
   def highest_value_customer
-    purchase_data = AccessingData.new.purchase_url
-    user_data = AccessingData.new.user_url
-    customer = CustomerValue.new(purchase_data, user_data)
+    customer = CustomerValue.new(@purchase_data, @user_data)
     customer.highest_value
     customer.customer_email_output
   end
 end
 
-app = App.new
+user_data = AccessingData.new.user_url
+purchase_data = AccessingData.new.purchase_url
+app = App.new(user_data, purchase_data)
 puts "Total spend of spinka_christophe@dietrich.io"
 app.total_spend('spinka_christophe@dietrich.io')
 puts "Average spend of spinka_christophe@dietrich.io"
