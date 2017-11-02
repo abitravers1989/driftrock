@@ -163,7 +163,7 @@ I would double the API data in the test.
 
 Most Loyal Class
 
-Edge case  the most loyal customers ID number did not appear in the user data, this needs addressing.
+Edge case: if the most loyal customers ID number did not appear in the user data, this needs addressing.
 
 Refactoring so the methods are much shorter.
 
