@@ -1,5 +1,7 @@
 Next steps:
-"Current issue with slowness of finding the highest value customer. Loop take a long time. (Would this be quicker in Javascript?). App.rb which will be controller class, need to refactor to get the data once then pass it to all the methods. This API data can then be doubled in testing better and app may execute slightly faster."
+Current issue with slowness of finding the highest value customer. Loop take a long time. (Would this be quicker in Javascript?).
+
+
 
 # Content
 
@@ -175,13 +177,17 @@ The methods which calculate the average spend need to be made less complex (sepa
 
 When the number output by either of the methods ends in 0 e.g. £22.20 then the last zero is cut off by the .round method. I need to improve this.
 
+Average spend functionality: If the customer provided has made no purchases then there is an error in the output. The average is calculated by dividing the total spend by the number of times that customer has made a purchase. When it is zero for both (0/0), get a  "ZeroDivision" Error.
+
+Total spend: If customer has made no purchases need error message.
+
 
 
 All classes:
 
 Unsure if so much should be in the initialise method.
 
-
+Edge cases need to be accounted for and error messages.
 
 Process improvements:
 

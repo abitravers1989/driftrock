@@ -50,25 +50,30 @@ describe App do
 
   context '#total_spend' do
     it 'It outputs £ symbol followed by a number' do
-      expect(app.total_spend('spinka_christophe@dietrich.io')).to eq '£ 325.83'
+      expect(app.total_spend('schimmel_quincy@ernser.io')).to eq "£ 85.49"
     end
   end
 
   context '#average_spend' do
     it 'It outputs £ symbol followed by a number' do
-      expect(app.average_spend('spinka_christophe@dietrich.io')).to eq '£36.2'
+      expect(app.average_spend('schimmel_quincy@ernser.io')).to eq "£28.5"
     end
+
+    # it 'If the customer has spent nothing then it throws an error message' do
+    #   expect(app.average_spend('spinka_christophe@dietrich.io')).to eq "Customer not made a purchase"
+    # end
+
   end
 
   context '#most_loyal' do
     it 'It outputs the most loyal customers email or Not found"' do
-      expect(app.most_loyal).to eq 'bogisich_judah@hilperttromp.biz'
+      expect(app.most_loyal).to eq "schimmel_quincy@ernser.io"
     end
   end
 
   context '#highest_value_customer' do
     it 'It outputs the highest value customer who has spent the most' do
-      expect(app.highest_value_customer).to eq 'bogisich_judah@hilperttromp.biz'
+      expect(app.highest_value_customer).to eq "schimmel_quincy@ernser.io"
     end
   end
 end
