@@ -6,7 +6,7 @@ require_relative 'customer_value.rb'
 require_relative 'most_sold.rb'
 
 
-class App
+class Controller
 
   def initialize(user_data, purchase_data)
     @user_data = user_data
@@ -42,16 +42,16 @@ class App
   end
 end
 
-user_data = AccessingData.new.user_url
-purchase_data = AccessingData.new.purchase_url
-app = App.new(user_data, purchase_data)
-puts "Total spend of spinka_christophe@dietrich.io"
-app.total_spend('spinka_christophe@dietrich.io')
-puts "Average spend of spinka_christophe@dietrich.io"
-app.average_spend('spinka_christophe@dietrich.io')
-puts "Most loyal customer"
-app.most_loyal
-puts "Highest value customer"
-app.highest_value_customer
-puts "Most sold item"
-app.most_sold_item
+# user_data = AccessingData.new.user_url
+# purchase_data = AccessingData.new.purchase_url
+# app = Controller.new(user_data, purchase_data)
+# puts "Total spend of spinka_christophe@dietrich.io"
+# app.total_spend('spinka_christophe@dietrich.io')
+# puts "Average spend of spinka_christophe@dietrich.io"
+# app.average_spend('spinka_christophe@dietrich.io')
+# puts "Most loyal customer"
+# app.most_loyal
+# puts "Highest value customer"
+# app.highest_value_customer
+# puts "Most sold item"
+# app.most_sold_item

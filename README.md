@@ -31,7 +31,7 @@ The script (app.rb) is to be opened in the command line and given one argument. 
 
 The answer should be output to the Command Line.
 
-##  How You Can Use It.
+##  How You Can Install It.
 
 Navigate to your command line. Type in:
 
@@ -50,7 +50,15 @@ $ bundle install
 In your command line navigate to your ‘driftrock’ directory. Then (still in your command line) type:
 
 `````
-$ ruby app.rb
+$ ruby app.rb total_spend insert_email_address@user.com
+or
+$ ruby app.rb average_spend insert_email_address@user.com
+or
+$ ruby app.rb most_loyal insert_email_address@user.com
+or
+$ ruby app.rb highest_value_customer
+or
+$ ruby app.rb most_sold
 `````
 
 
@@ -110,44 +118,8 @@ I can learn from what has gone well and build on it.
 4.	Started to code.
 5.	Mapped out the relationships again as I progressed.
 
-## Missing Functionality
-
-App.rb
-
-The current app.rb should be the controller, as it is the file which controls the flow of information through the programme.
-
-This controller needs to be tested thoroughly with doubled API data.  
-
-The app.rb file should contain code along the following lines.
-
-````
-require ‘controller.rb’
-
- def menu
-   using_app(STDIN.gets.chomp)
- end
-
- def using_app(selection)
-   case selection
-     when "total_spend"
-       total_spend(email)
-     when "average_spend"
-       average_spend
-     when "most_loyal"
-       most_loyal
-     else
-       puts "Nothing selected"
-  end
- end
-
-controller = Controller.new
-controller. menu (ARGV)
-
-````
-This is sudo-code and I am not sure it is correct. I am not entirely sure how to pass the argument from the command line in and also how to pass the email given in.
 
 ## Improvements
-
 
 
 Accessing Data Class

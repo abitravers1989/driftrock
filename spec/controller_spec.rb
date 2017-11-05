@@ -1,7 +1,7 @@
-require 'most_sold'
+require 'controller'
 require 'spec_helper'
 
-describe MostSold do
+describe Controller do
 
   purchase_data =
     [
@@ -22,16 +22,12 @@ describe MostSold do
       },
       {
         'user_id' => 'KZHR-1H35-2IH8-JXYN',
-        'item' => 'Gorgeous Paper Hat',
-        'spend' => '56.5'
-      },
-      {
-        'user_id' => 'KZHR-1H35-2IH8-JXYN',
         'item' => 'Aerodynamic Copper Bench',
         'spend' => '3.21'
       }
     ]
 
+  # data.user_url double
   user_data =
     [
       {
@@ -50,33 +46,34 @@ describe MostSold do
       }
     ]
 
-  let(:most_sold) { MostSold.new(purchase_data, user_data) }
+  let(:controller) { Controller.new(user_data, purchase_data) }
 
-  context '#initialize' do
-    it 'It is initialized with an item total and highest total variables as zero.' do
-      expect(most_sold.highest_total).to eq 0
+  context '#total_spend' do
+    it 'It outputs £ symbol followed by a number' do
+      expect(controller.total_spend('schimmel_quincy@ernser.io')).to eq "£ 85.49"
     end
   end
 
-  context '#total_item_revenue' do
-    it 'It calculates the total spend of a given item.' do
-      most_sold.total_item_revenue
-      expect(most_sold.highest_total).to eq 176.2
+  context '#average_spend' do
+    it 'It outputs £ symbol followed by a number' do
+      expect(controller.average_spend('schimmel_quincy@ernser.io')).to eq "£28.5"
+    end
+
+    # it 'If the customer has spent nothing then it throws an error message' do
+    #   expect(app.average_spend('spinka_christophe@dietrich.io')).to eq "Customer not made a purchase"
+    # end
+
+  end
+
+  context '#most_loyal' do
+    it 'It outputs the most loyal customers email or Not found"' do
+      expect(controller.most_loyal).to eq "schimmel_quincy@ernser.io"
     end
   end
 
-  context '#set_item_name' do
-    it 'It sets the name of the most sold item to that which has the highest revenue.' do
-      most_sold.total_item_revenue
-      expect(most_sold.most_sold_item).to eq "Gorgeous Paper Hat"
+  context '#highest_value_customer' do
+    it 'It outputs the highest value customer who has spent the most' do
+      expect(controller.highest_value_customer).to eq "schimmel_quincy@ernser.io"
     end
   end
-
-  context '#output_most_sold_item' do
-    it 'It outputs the name of the most sold item.' do
-      most_sold.total_item_revenue
-      expect(most_sold.output_most_sold_item).to output("Gorgeous Paper Hat")
-    end
-  end
-
 end
