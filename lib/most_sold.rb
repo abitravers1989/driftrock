@@ -19,19 +19,19 @@ class MostSold
   end
 
   def total_item_spend(item_name)
-   @purchase_data.each do |purchase|
-     if (item_name == purchase["item"])
-      calculating_spend(purchase["spend"])
-     end
-   end
-    set_item_name(item_name)
+    @purchase_data.each do |purchase|
+      if (item_name == purchase["item"])
+        calculating_spend(purchase["spend"])
+      end
+    end
+    setting_item_name(item_name)
     @item_total = 0
   end
 
-  def set_item_name(item_name)
-    if (@item_total > @highest_total)
-     @highest_total += @item_total
-     @most_sold_item = item_name
+  def setting_item_name(item_name)
+    if @item_total > @highest_total
+      @highest_total += @item_total
+      @most_sold_item = item_name
     end
   end
 

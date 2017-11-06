@@ -121,6 +121,11 @@ I can learn from what has gone well and build on it.
 
 ## Improvements
 
+1. fix broken test
+2. Test AD class better 
+2. fix page number on AD class
+3. refactor customer spend.
+
 
 Accessing Data Class
 

@@ -75,7 +75,7 @@ describe MostSold do
   context '#output_most_sold_item' do
     it 'It outputs the name of the most sold item.' do
       most_sold.total_item_revenue
-      expect(most_sold.output_most_sold_item).to output("Gorgeous Paper Hat")
+      expect{ most_sold.output_most_sold_item }.to output{".......Gorgeous Paper Hat"}.to_stdout
     end
   end
 

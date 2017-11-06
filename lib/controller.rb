@@ -5,7 +5,6 @@ require_relative 'customer_loyalty.rb'
 require_relative 'customer_value.rb'
 require_relative 'most_sold.rb'
 
-
 class Controller
 
   def initialize(user_data, purchase_data)
